@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+body{
+    text-align: center;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #41df8d, #549fd8);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+
+}
+.container{
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 400px;
+    max-width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+}
+.user{
+    font-size: 1rem;
+    color: #100e0e;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.user input{
+    width: 100%;
+    height: 18px;
+    padding: 0.6rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    text-align: center;
+    transition: box-shadow .25s, border-color .25s;
+    background: #fff;
+}
+.pass {
+    font-size: 1rem;
+    color: #100e0e;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.pass input{
+    width: 100%;
+    height: 18px;
+    padding: 0.6rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    text-align: center;
+    transition: box-shadow .25s, border-color .25s;
+    background: #fff;
+}
+button{
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #ea6696, #764ba2);
+    color: #fff;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: transform .18s, box-shadow .18s;
+    margin-top: 1rem;
+}
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.flash-messages {
+    margin: 15px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    border-radius: 12px;
+}
+
+.alert.error {
+    background-color: #e74c3c; 
+}
+
+.alert.info {
+    background-color: #3498db;
+}
+
+.alert.success {
+    background-color: #2ecc71;
+}

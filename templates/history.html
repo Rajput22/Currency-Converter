@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+    
+</head>
+<body>
+    <header>
+        <h1>Currency Converter</h1>
+    </header>
+
+    <main>
+        <h2>Your Conversion History</h2>
+
+        {% if records and records|length > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Converted</th>
+                    <th>Rate</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in records %}
+                <tr>
+                    <td>{{ row.from_currency }}</td>
+                    <td>{{ row.to_currency }}</td>
+                    <td>{{ "%.2f"|format(row.amount) }}</td>
+                    <td>{{ "%.2f"|format(row.result) }}</td>
+                    <td>{{ "%.4f"|format(row.rate) }}</td>
+                    <td>{{ row.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="text-align:center; color: #555;">No conversion history yet.</p>
+        {% endif %}
+
+        <div class="btn-container">
+            <a class="btn" href="{{ url_for('converter') }}">Back to Converter</a>
+            <a class="btn" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Currency Converter | Stay updated with live rates.
+    </footer>
+</body>
+</html>

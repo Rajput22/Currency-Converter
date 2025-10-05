@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website <b>Currency Converter</b></h1>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+      {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+        <h2>Login/Sign-in</h2>
+        <form action=" {{ url_for('login') }} " method="POST">
+            <div class="user">
+                Username:<br>
+                <input type="text" name="username" placeholder="enter your Username"><br>
+            </div>
+            <div class="pass">
+                Password:<br>
+                <input type="password" name="password" placeholder="enter your password"><br>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Click to Register</a></p>
+    </div>
+</body>
+</html>

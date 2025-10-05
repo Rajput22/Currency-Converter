@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>This is Currency Converter Website</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Currency Converter</h2>
+
+            <form id="converterForm" onsubmit="return false;">
+                <!-- FROM block -->
+                <div class="currency-box from-box">
+                <div class="currency-header">
+                    <img id="from-flag" src="https://flagsapi.com/US/flat/64.png" alt="from-flag">
+                    <span id="from-code">USD</span>
+                </div>
+                <input id="from-amount" type="text" placeholder="Enter Amount">
+                </div>
+
+                <!-- DROPDOWNS + SWAP -->
+                <div class="dropdown">
+                <div class="select-container">
+                    <select id="from-select" name="from"></select>
+                </div>
+
+                <i id="swap" class="fa-solid fa-arrow-right-arrow-left" title="Swap"></i>
+
+                <div class="select-container">
+                    <select id="to-select" name="to"></select>
+                </div>
+                </div>
+
+                <!-- TO block -->
+                <div class="currency-box to-box">
+                <div class="currency-header">
+                    <img id="to-flag" src="https://flagsapi.com/AU/flat/64.png" alt="to-flag">
+                    <span id="to-code">AUD</span>
+                </div>
+                <input id="resultBox" type="text" placeholder="Converted Amount" readonly>
+                </div>
+
+                <button type="button" id="btn">Get Exchange Rate</button>
+            </form>
+        </div>
+    </main>
+    <div style="text-align:center; margin-top: 20px;">
+        <a href="{{ url_for('history') }}" class="button-link">View History</a>
+        <a href="{{ url_for('logout') }}" class="button-link logout">Logout</a>
+    </div>
+    <footer>
+        @2025 Stay up-to-date with your country's currency value compare to other country's currency value.<br>
+        Thank you for using our Website
+    </footer>
+    <script src="{{url_for('static', filename='js/codes.js')}}"></script>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
+</body>
+</html>
